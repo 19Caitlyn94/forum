@@ -4,4 +4,8 @@ defmodule ForumWeb.PageController do
   def home(conn, _params) do
     render(conn, :home)
   end
+
+  def users(conn, _params) do
+    render(conn, :users)
+  end
 end
