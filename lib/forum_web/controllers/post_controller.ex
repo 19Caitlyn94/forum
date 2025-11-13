@@ -12,9 +12,9 @@ defmodule ForumWeb.PostController do
   end
 
   def create(conn, %{"post" => post_params}) do
-    result = Post.create_post(post_params)
+    result = Posts.create_post(post_params)
 
-    with {:ok, %Post{} = post} <- Posts.create_post(post_params) do
+    with {:ok, %Post{} = post} <- result do
       conn
       |> put_status(:created)
       |> put_resp_header("location", ~p"/api/posts/#{post}")
